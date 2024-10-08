@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+#wrapper{
+    height:100vh; 
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px; /*3d effect went away when I removed this*/
+    z-index: -1;
+}
+
+
+.container{
+    position:relative; /*When this is absolute, it is removed from the normal flow of the document*/
+    height:100%; /*The  container disappears*/
+    display:flex; /*Commenting the below three has no effects*/
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d; /*The 3d efects go away*/
+    z-index: -1; /*the contianer section does not move relatively to the normal flow of the document*/
+}
+
+
+.background{
+    transform: translateZ(-40px) scale(5);
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(3);
+}
+
+
+.background, .foreground{
+    position:absolute;
+    height:100%;
+    width:100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+
+h1{
+    position:absolute;
+    top:5rem;
+    left:50%;
+    font-size: 5rem;
+    transform:translateX(-50%) translateZ(3px); /*Use translate to move content/images left or right*/
+    letter-spacing:4px;
+    color:white;
+    text-shadow:0 0 10px rgba(0,0,0,0.3);
+}
+
+
+
+section{
+    background-color: rgb(45,45,45);
+    color:white;
+    padding:5rem 0;
+
+}
+
+
+.secHeading{
+    font-size: 5rem;
+    padding:0 10rem;
+
+}
+
+
+.text{
+    font-size:1.5rem;
+    padding:0 10rem;
+    margin:5rem 0;
+}
+
+
+
+.bg{
+    position:relative;
+    width:100%;
+    background-attachment: fixed; /* Without this the image also moves when scrolled*/
+    background-size: cover;
+    background-position: center; /*This makes the image fit the entire screen*/
+    height:500px;
+}
+
+
+.desc{
+    position:absolute; /*The title of the image occupies the full block/row */
+    background-color: white;
+    padding: 0.5 rem 2rem;
+    top:50%;
+    left:50%;
+    transform:translateX(-50%);
+    color:black;
+    font-size: 3.5 rem;
+    font-weight:600;
+}
+
+
+.bg1{
+    background-image: url(sport-1.jpg);
+    /*background-size: 100%;*/
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+    /*background-size: contain;*/
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+    /*background-size: 130%;*/
+}
+
+
